@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 165394236153.dkr.ecr.us-east-1.amazonaws.com/tunx7-ecr:10
+        image: 165394236153.dkr.ecr.us-east-1.amazonaws.com/tunx7-ecr:12
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -46,7 +46,7 @@ spec:
           timeoutSeconds: 5
         envFrom:
         - configMapRef:
-            name: MyConfigMap
+            name: my-config-map
         env:
         - name: DB_PASSWORD
           valueFrom:
