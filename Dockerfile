@@ -1,4 +1,5 @@
-FROM python:3.9.19-slim
+# FROM python:3.9.19-slim
+FROM public.ecr.aws/docker/library/python:3.10-slim-buster
 
 COPY . /app
 WORKDIR /app
