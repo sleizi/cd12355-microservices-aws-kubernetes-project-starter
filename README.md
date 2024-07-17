@@ -24,53 +24,12 @@ kubectl config view
 Set up a Postgres database
 
 1. Create a file pvc.yaml on your local machine, with the following content.
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgresql-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-```
 
 2. Create PersistentVolume 
-```yaml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: my-manual-pv
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: gp2
-  hostPath:
-    path: "/mnt/data"
-```
 
 3. Create PersistentVolume 
-```yaml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: my-manual-pv
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: gp2
-  hostPath:
-    path: "/mnt/data"
-```
- 4. run commands
+
+4. run commands
 ```bash
 cd ./deployment/database
 kubectl apply -f pvc.yaml
